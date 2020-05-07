@@ -1,0 +1,81 @@
+version: '3.7'
+
+volumes:
+  datastream:
+    driver: local
+    driver_opts:
+      type: none
+      device: $PWD/data
+      o: bind
+  compliance:
+    driver: local
+    driver_opts:
+      type: none
+      device: $PWD/compliance
+      o: bind
+
+services:
+
+  stream_partition_1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: covid19ingest_1
+    deploy:
+      restart_policy:
+        condition: on-failure
+    environment: 
+      - PARTITION_ID=1
+      - CONSUMER_KEY=$CONSUMER_KEY
+      - CONSUMER_SECRET=$CONSUMER_SECRET
+    volumes:
+      - datastream:/data
+    restart: always
+
+  stream_partition_2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: covid19ingest_2
+    deploy:
+      restart_policy:
+        condition: on-failure
+    environment: 
+      - PARTITION_ID=2
+      - CONSUMER_KEY=$CONSUMER_KEY
+      - CONSUMER_SECRET=$CONSUMER_SECRET
+    volumes:
+      - datastream:/data
+    restart: always
+
+  stream_partition_3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: covid19ingest_3
+    deploy:
+      restart_policy:
+        condition: on-failure
+    environment: 
+      - PARTITION_ID=3
+      - CONSUMER_KEY=$CONSUMER_KEY
+      - CONSUMER_SECRET=$CONSUMER_SECRET
+    volumes:
+      - datastream:/data
+    restart: always
+
+  stream_partition_4:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: covid19ingest_4
+    deploy:
+      restart_policy:
+        condition: on-failure
+    environment: 
+      - PARTITION_ID=4
+      - CONSUMER_KEY=$CONSUMER_KEY
+      - CONSUMER_SECRET=$CONSUMER_SECRET
+    volumes:
+      - datastream:/data
+    restart: always
