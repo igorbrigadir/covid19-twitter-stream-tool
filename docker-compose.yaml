@@ -1,12 +1,14 @@
 version: '3.7'
 
 volumes:
+
   datastream:
     driver: local
     driver_opts:
       type: none
       device: $PWD/data
       o: bind
+
   compliance:
     driver: local
     driver_opts:
@@ -18,12 +20,9 @@ services:
 
   stream_partition_1:
     build:
-      context: .
+      context: ./src/stream-tweets
       dockerfile: Dockerfile
     container_name: covid19ingest_1
-    deploy:
-      restart_policy:
-        condition: on-failure
     environment: 
       - PARTITION_ID=1
       - CONSUMER_KEY=$CONSUMER_KEY
@@ -34,12 +33,9 @@ services:
 
   stream_partition_2:
     build:
-      context: .
+      context: ./src/stream-tweets
       dockerfile: Dockerfile
     container_name: covid19ingest_2
-    deploy:
-      restart_policy:
-        condition: on-failure
     environment: 
       - PARTITION_ID=2
       - CONSUMER_KEY=$CONSUMER_KEY
@@ -50,12 +46,9 @@ services:
 
   stream_partition_3:
     build:
-      context: .
+      context: ./src/stream-tweets
       dockerfile: Dockerfile
     container_name: covid19ingest_3
-    deploy:
-      restart_policy:
-        condition: on-failure
     environment: 
       - PARTITION_ID=3
       - CONSUMER_KEY=$CONSUMER_KEY
@@ -66,16 +59,117 @@ services:
 
   stream_partition_4:
     build:
-      context: .
+      context: ./src/stream-tweets
       dockerfile: Dockerfile
     container_name: covid19ingest_4
-    deploy:
-      restart_policy:
-        condition: on-failure
     environment: 
       - PARTITION_ID=4
       - CONSUMER_KEY=$CONSUMER_KEY
       - CONSUMER_SECRET=$CONSUMER_SECRET
     volumes:
       - datastream:/data
+    restart: always
+
+  compliance_partition_1:
+    build:
+      context: ./src/stream-compliance
+      dockerfile: Dockerfile
+    container_name: compliance_ingest_1
+    environment: 
+      - PARTITION_ID=1
+      - CONSUMER_KEY=$CONSUMER_KEY
+      - CONSUMER_SECRET=$CONSUMER_SECRET
+    volumes:
+      - compliance:/compliance
+    restart: always
+
+  compliance_partition_2:
+    build:
+      context: ./src/stream-compliance
+      dockerfile: Dockerfile
+    container_name: compliance_ingest_2
+    environment: 
+      - PARTITION_ID=2
+      - CONSUMER_KEY=$CONSUMER_KEY
+      - CONSUMER_SECRET=$CONSUMER_SECRET
+    volumes:
+      - compliance:/compliance
+    restart: always
+
+  compliance_partition_3:
+    build:
+      context: ./src/stream-compliance
+      dockerfile: Dockerfile
+    container_name: compliance_ingest_3
+    environment: 
+      - PARTITION_ID=3
+      - CONSUMER_KEY=$CONSUMER_KEY
+      - CONSUMER_SECRET=$CONSUMER_SECRET
+    volumes:
+      - compliance:/compliance
+    restart: always
+
+  compliance_partition_4:
+    build:
+      context: ./src/stream-compliance
+      dockerfile: Dockerfile
+    container_name: compliance_ingest_4
+    environment: 
+      - PARTITION_ID=4
+      - CONSUMER_KEY=$CONSUMER_KEY
+      - CONSUMER_SECRET=$CONSUMER_SECRET
+    volumes:
+      - compliance:/compliance
+    restart: always
+
+  compliance_partition_5:
+    build:
+      context: ./src/stream-compliance
+      dockerfile: Dockerfile
+    container_name: compliance_ingest_5
+    environment: 
+      - PARTITION_ID=5
+      - CONSUMER_KEY=$CONSUMER_KEY
+      - CONSUMER_SECRET=$CONSUMER_SECRET
+    volumes:
+      - compliance:/compliance
+    restart: always
+
+  compliance_partition_6:
+    build:
+      context: ./src/stream-compliance
+      dockerfile: Dockerfile
+    container_name: compliance_ingest_6
+    environment: 
+      - PARTITION_ID=6
+      - CONSUMER_KEY=$CONSUMER_KEY
+      - CONSUMER_SECRET=$CONSUMER_SECRET
+    volumes:
+      - compliance:/compliance
+    restart: always
+
+  compliance_partition_7:
+    build:
+      context: ./src/stream-compliance
+      dockerfile: Dockerfile
+    container_name: compliance_ingest_7
+    environment: 
+      - PARTITION_ID=7
+      - CONSUMER_KEY=$CONSUMER_KEY
+      - CONSUMER_SECRET=$CONSUMER_SECRET
+    volumes:
+      - compliance:/compliance
+    restart: always
+
+  compliance_partition_8:
+    build:
+      context: ./src/stream-compliance
+      dockerfile: Dockerfile
+    container_name: compliance_ingest_8
+    environment: 
+      - PARTITION_ID=8
+      - CONSUMER_KEY=$CONSUMER_KEY
+      - CONSUMER_SECRET=$CONSUMER_SECRET
+    volumes:
+      - compliance:/compliance
     restart: always

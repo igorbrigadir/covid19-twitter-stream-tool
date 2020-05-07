@@ -12,7 +12,7 @@ CONSUMER_KEY=xxx CONSUMER_SECRET=xxx docker-compose up -d
 
 This will start a separate container for each stream partition, so that if one disconnects the rest will continue - hopefully this will minimise data loss. These will write separately into files, rotating and compressing every hour. This stream is roughly 8GB compressed per hour, but could be more, make sure you have disk space.
 
-You will need to re-assemble the stream for further processing together with the compliance stream, which is separated into 8 partitions. Compliance Stream is not implemented yet, I will add that and coe for merging the stream shortly.
+You will need to re-assemble the stream for further processing together with the compliance stream, which is separated into 8 partitions. Code for processing and applying this will be added later.
 
 ## See docker compose logs
 
