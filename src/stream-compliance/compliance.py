@@ -49,7 +49,7 @@ def get_bearer_token(key, secret):
         auth=(key, secret),
         data={"grant_type": "client_credentials"},
         headers={
-            "User-Agent": "Python igorbrigadir/covid19-twitter-stream-tool v0.0.1"
+            "User-Agent": "Python igorbrigadir/covid19-twitter-stream-tool v0.0.2"
         },
     )
 
@@ -69,7 +69,7 @@ def stream_connect(partition):
             partition
         ),
         headers={
-            "User-Agent": "Python igorbrigadir/covid19-twitter-stream-tool v0.0.1",
+            "User-Agent": "Python igorbrigadir/covid19-twitter-stream-tool v0.0.2",
             "Authorization": "Bearer {}".format(
                 get_bearer_token(consumer_key, consumer_secret)
             ),
