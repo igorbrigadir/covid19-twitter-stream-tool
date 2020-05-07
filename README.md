@@ -1,14 +1,16 @@
 # Twitter Labs COVID-19 Stream Tools
 
-Get your Keys from you app in <https://developer.twitter.com/en/apps>
+Get your Consumer Key and Consumer Secret from your app details in <https://developer.twitter.com/en/apps>
 
-Enable the Labs *COVID-19 stream* and *Labs' compliance firehose stream* with your app on <https://developer.twitter.com/en/account/labs>
+Enable the Labs **COVID-19 stream** and **Labs' compliance firehose stream** with your app on <https://developer.twitter.com/en/account/labs>
 
 To start data gathering, run:
 
 ```bash
 CONSUMER_KEY=xxx CONSUMER_SECRET=xxx docker-compose up -d
 ```
+
+You need docker and docker compose already installed.
 
 This will start a separate container for each stream partition, so that if one disconnects the rest will continue - hopefully this will minimise data loss. These will write separately into files, rotating and compressing every hour. This stream is roughly 8GB compressed per hour, but could be more, make sure you have disk space.
 
