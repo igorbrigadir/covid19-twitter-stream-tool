@@ -130,4 +130,5 @@ dmypy.json
 
 # Data
 *.xz
-
+data/covid19_partition_*
+compliance/compliance_partition_*
