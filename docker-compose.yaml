@@ -76,7 +76,7 @@ services:
 
   compliance_partition_1:
     build:
-      context: ./src/stream-compliance
+      context: ./src/stream
       dockerfile: Dockerfile
     container_name: compliance_ingest_1
     environment: 
@@ -90,7 +90,7 @@ services:
 
   compliance_partition_2:
     build:
-      context: ./src/stream-compliance
+      context: ./src/stream
       dockerfile: Dockerfile
     container_name: compliance_ingest_2
     environment: 
@@ -104,7 +104,7 @@ services:
 
   compliance_partition_3:
     build:
-      context: ./src/stream-compliance
+      context: ./src/stream
       dockerfile: Dockerfile
     container_name: compliance_ingest_3
     environment: 
@@ -118,7 +118,7 @@ services:
 
   compliance_partition_4:
     build:
-      context: ./src/stream-compliance
+      context: ./src/stream
       dockerfile: Dockerfile
     container_name: compliance_ingest_4
     environment: 
@@ -132,7 +132,7 @@ services:
 
   compliance_partition_5:
     build:
-      context: ./src/stream-compliance
+      context: ./src/stream
       dockerfile: Dockerfile
     container_name: compliance_ingest_5
     environment: 
@@ -146,7 +146,7 @@ services:
 
   compliance_partition_6:
     build:
-      context: ./src/stream-compliance
+      context: ./src/stream
       dockerfile: Dockerfile
     container_name: compliance_ingest_6
     environment: 
@@ -160,7 +160,7 @@ services:
 
   compliance_partition_7:
     build:
-      context: ./src/stream-compliance
+      context: ./src/stream
       dockerfile: Dockerfile
     container_name: compliance_ingest_7
     environment: 
@@ -174,7 +174,7 @@ services:
 
   compliance_partition_8:
     build:
-      context: ./src/stream-compliance
+      context: ./src/stream
       dockerfile: Dockerfile
     container_name: compliance_ingest_8
     environment: 
