@@ -6,7 +6,7 @@ import time
 import subprocess
 
 
-user_agent = "Python igorbrigadir/covid19-twitter-stream-tool v0.0.3"
+user_agent = "Python igorbrigadir/covid19-twitter-stream-tool v0.0.4"
 consumer_key = os.environ.get("CONSUMER_KEY")
 consumer_secret = os.environ.get("CONSUMER_SECRET")
 stream_type = os.environ.get("STREAM_TYPE")
