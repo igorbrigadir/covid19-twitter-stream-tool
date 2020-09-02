@@ -1,5 +1,7 @@
 # Twitter Labs COVID-19 Stream Tools
 
+[![Labs](https://img.shields.io/endpoint?url=https%3A%2F%2Ftwbadges.glitch.me%2Fbadges%2Flabs)](https://developer.twitter.com/en/docs/labs)
+
 Get your Consumer Key and Consumer Secret from your app details in <https://developer.twitter.com/en/apps>
 
 Enable the Labs **COVID-19 stream** and **Labs' compliance firehose stream** with your app on <https://developer.twitter.com/en/account/labs>
