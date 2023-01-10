@@ -1,3 +1,5 @@
+**The COVID-19 Labs Stream Endpoint is now deprecated. In v2 API the alternative is to use `context:123.1220701888179359745` context annotation: https://developer.twitter.com/en/docs/twitter-api/annotations/overview**
+
 # Twitter Labs COVID-19 Stream Tools
 
 [![Labs](https://img.shields.io/endpoint?url=https%3A%2F%2Ftwbadges.glitch.me%2Fbadges%2Flabs)](https://developer.twitter.com/en/docs/labs)
